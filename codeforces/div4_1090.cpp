@@ -37,40 +37,17 @@ typedef long long ll;
     return 0;
 }*/
 
-//C. The 67th Permutation Problem
-/*int main(){
+//C. The 67th Permutation Problem - greedy
+int main(){
     ll t{0};
     cin >> t;
     while (t--) {
         ll n{0};
         cin>>n;
-        vector<ll> v;
-        for(ll i=1;i<=3*n;i++){
-            v.push_back(i);
-        }
-        ll sum{0},cursum;
-        do {
-            cursum=0;
-            for(ll i=1;i<=3*n;i+=3){
-                cursum += v[i];
-            }
-            sum=max(sum,cursum);
-        }while (next_permutation(v.begin(),v.end()));
-        sort(v.begin(),v.end());
-        do {
-            ll s=0;
-            for(ll i=1;i<=3*n;i+=3){
-                s += v[i];
-            }
-            if (s==cursum) {
-                break;
-            }
-        }while (next_permutation(v.begin(),v.end()));
-        cout << cursum<<"\n";
-        for ( auto i:v) {
-            cout << i << " ";
+        for( ll i=1 ,j=3*n ; i<j ; ++i , j-=2 ){
+            cout << i << " " << j-1 << " " << j << " ";
         }
         cout << endl;
     }
     return 0;
-}*/
+}
