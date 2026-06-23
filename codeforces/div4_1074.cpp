@@ -39,7 +39,7 @@ typedef long long ll;
 }*/
 
 //C - Shifted MEX 
-int main(){
+/*int main(){
     ll t{0},count{0};
     cin >> t;
     while (t--) {
@@ -66,4 +66,4 @@ int main(){
         cout << j<<"\n";
     }
     return 0;
-}
+}*/
