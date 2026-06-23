@@ -18,7 +18,7 @@ typedef long long ll;
 }*/
 
 //B - Your Name
-int main(){
+/*int main(){
     ll test{0};
     cin>> test;
     while (test--) {
@@ -32,4 +32,24 @@ int main(){
         else{cout << "NO\n";}
     }
     return 0;
-}
+}*/
+
+//C - Isamatdin and His Magic Wand!
+/*int main()
+{
+    ll test; 
+    cin >> test;
+    while (test--) {
+        ll n;
+        cin >> n;
+        bool odd = false, even = false;
+        int a[n];
+        for (int i{0} , x; i < n; ++i) {
+            cin >> a[i];
+            if (a[i] % 2 == 0) even = true;
+            else odd = true;
+        }
+        if (odd and even) sort(a, a + n);
+        for (int i = 0; i < n; ++i) {cout << a[i] << " \n"[i == n - 1];}
+    }
+}*/
