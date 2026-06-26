@@ -40,7 +40,7 @@ typedef long long ll;
 }*/
 
 //D. Destruction of the Dandelion Fields
-int main(){
+/*int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -77,4 +77,5 @@ int main(){
         cout << answer << "\n";
     }
     return 0;
-}
+}*/
+

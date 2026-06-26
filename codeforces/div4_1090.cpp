@@ -38,7 +38,7 @@ typedef long long ll;
 }*/
 
 //C. The 67th Permutation Problem - greedy
-int main(){
+/*int main(){
     ll t{0};
     cin >> t;
     while (t--) {
@@ -50,4 +50,18 @@ int main(){
         cout << endl;
     }
     return 0;
+}*/
+
+//D. The 67th OEIS Problem
+int main(){
+    ll test{0};
+    cin >> test;
+    while(test--){
+        ll n{0};
+        cin >> n;
+        for( ll i{0} ; i < n ; i++ ){
+            cout << (2*i+1)*(2*i+3)<<" ";
+        }
+        cout << "\n";
+    }
 }
