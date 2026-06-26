@@ -53,7 +53,7 @@ typedef long long ll;
 }*/
 
 //D. The 67th OEIS Problem
-int main(){
+/*int main(){
     ll test{0};
     cin >> test;
     while(test--){
@@ -64,4 +64,5 @@ int main(){
         }
         cout << "\n";
     }
-}
+}*/
+

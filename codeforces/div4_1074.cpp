@@ -39,31 +39,30 @@ typedef long long ll;
 }*/
 
 //C - Shifted MEX 
-/*int main(){
-    ll t{0},count{0};
+int main() {
+    ll t;
     cin >> t;
+
     while (t--) {
-        ++count;
-        ll n{0};
+        ll n;
         cin >> n;
-        vector<ll> v(n,0);
-        for(ll i=0 ; i<n ; i++){
-            ll y;
-            cin >> y;
-            v[i]=y;
+
+        vector<ll> vec(n); 
+        for (auto &x: vec) cin >> x;
+
+        sort(vec.begin(), vec.end());
+        // Remove duplicates
+        vec.erase(unique(vec.begin(), vec.end()), vec.end());
+        n = vec.size();
+        ll best = 0;
+        ll current = 0;
+        for (ll i = 0; i < n; i++) {
+            if (i == 0 || vec[i] != vec[i-1]+1) {
+                current = 0;
+            }
+            current++;
+            best = max(best, current);
         }
-        sort(v.begin(),v.end());
-        ll x= -v[0];
-        set<ll> set;
-        for(ll i: v){
-            set.insert(i+x);
-        }
-        ll j=0;
-        for( auto i : set ){
-            if( i!=j ){break;}
-            else {++j;}
-        }
-        cout << j<<"\n";
+        cout << best << "\n";
     }
-    return 0;
-}*/
+}
