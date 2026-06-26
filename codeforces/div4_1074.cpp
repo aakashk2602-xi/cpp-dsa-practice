@@ -39,7 +39,7 @@ typedef long long ll;
 }*/
 
 //C - Shifted MEX 
-int main() {
+/*int main() {
     ll t;
     cin >> t;
 
@@ -65,4 +65,4 @@ int main() {
         }
         cout << best << "\n";
     }
-}
+}*/
