@@ -55,8 +55,7 @@ typedef long long ll;
 }*/
 
 //D. Yet Another Array Problem
-
-int main() {
+/*int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     using ll = long long;
@@ -81,4 +80,5 @@ int main() {
             }
         }
     }
-}
+}*/
+
