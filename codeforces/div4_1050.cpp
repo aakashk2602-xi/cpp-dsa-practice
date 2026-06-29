@@ -79,25 +79,49 @@ typedef long long ll;
     return 0;
 }*/
 
-//
+//C. Pacer
+void solve(){
+    ll n{0},m{0};
+    cin >> n >> m;
+    ll time{0};
+    ll side{0};
+    ll points{0};
+    for( ll i{0} ; i < n ; i++ ){
+        ll a , b;
+        cin >> a >> b;
+        ll currtime{ a - time };
+        if (side==0) {
+            points+=currtime;
+            if( b == 1 ){
+                if( currtime%2==0 )
+                    points--;
+            }else {
+                if( currtime%2==1 )
+                    points--;
+            }
+        }else {
+            points+=currtime;
+            if( b == 0 ){
+                if( currtime%2==0 )
+                    points--;
+            }else {
+                if( currtime%2==1 )
+                    points--;
+            }
+        }
+        time = a;
+        side=b;
+    }
+    points += m - time;
+    cout << points << "\n";
+
+}
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 	int T;
 	cin >> T;
 	while(T--){
-		int n, m, x , y;
-		cin >> n >> m;
-		int px = 0, py = 0;
-		int points = 0;
-		while(n--){
-			cin >> x >> y;
-			points += x - px;
-			if(((x - px + 2) % 2) != ((y - py + 2) % 2))points--;
-			px = x;
-			py = y;
-		}
-		if(px != m){
-			points += m - px;
-		}
-		cout << points << endl;
+		solve();
 	}
 }	
