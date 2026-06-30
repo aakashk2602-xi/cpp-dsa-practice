@@ -66,3 +66,29 @@ typedef long long ll;
         cout << best << "\n";
     }
 }*/
+
+//D. OutOfMemoryError
+int main(){
+    ll t{0};
+    cin >> t ;
+    while (t--) {
+        ll n , m , h;
+        cin >> n >> m >> h;
+        vector<ll> v(n,0);
+        for( ll i{0} ;i<n ; i++){ cin >> v[i]; }
+        vector<ll> cpy_v=v;
+        for( ll i{0} ; i < m ; i++ ){
+            ll b,c;
+            cin >> b >> c;
+            if( v[b-1]+c<=h ){
+                v[b-1]+=c;
+            }else{
+                v=cpy_v;
+            }
+        }
+        for(ll i : v){
+            cout << i << " ";
+        }
+        cout << "\n";
+    }
+}

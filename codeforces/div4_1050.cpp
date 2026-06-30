@@ -80,7 +80,7 @@ typedef long long ll;
 }*/
 
 //C. Pacer
-void solve(){
+/*void solve(){
     ll n{0},m{0};
     cin >> n >> m;
     ll time{0};
@@ -125,3 +125,4 @@ int main(){
 		solve();
 	}
 }	
+*/
