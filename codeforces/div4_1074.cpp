@@ -69,25 +69,40 @@ typedef long long ll;
 
 //D. OutOfMemoryError
 int main(){
-    ll t{0};
-    cin >> t ;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    ll t;
+    cin >> t;
     while (t--) {
-        ll n , m , h;
+        ll n, m, h;
         cin >> n >> m >> h;
-        vector<ll> v(n,0);
-        for( ll i{0} ;i<n ; i++){ cin >> v[i]; }
-        vector<ll> cpy_v=v;
-        for( ll i{0} ; i < m ; i++ ){
-            ll b,c;
+
+        vector<ll> a(n);
+        for (ll i = 0; i < n; i++) cin >> a[i];
+
+        vector<ll> delta(n, 0);   // current addition relative to a[i]
+        vector<ll> ver(n, 0);     // version when delta[i] was last set
+        ll version = 1;           // current "live" version
+
+        for (ll i = 0; i < m; i++) {
+            ll b, c;
             cin >> b >> c;
-            if( v[b-1]+c<=h ){
-                v[b-1]+=c;
-            }else{
-                v=cpy_v;
+            ll idx = b - 1;
+
+            ll curVal = (ver[idx] == version) ? a[idx] + delta[idx] : a[idx];
+
+            if (curVal + c <= h) {
+                delta[idx] = curVal + c - a[idx];
+                ver[idx] = version;
+            } else {
+                version++; // "reset" everything in O(1)
             }
         }
-        for(ll i : v){
-            cout << i << " ";
+
+        for (ll i = 0; i < n; i++) {
+            ll val = (ver[i] == version) ? a[i] + delta[i] : a[i];
+            cout << val << " ";
         }
         cout << "\n";
     }
