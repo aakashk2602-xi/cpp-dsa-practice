@@ -26,7 +26,7 @@ int main(){
 */
 
 //B
-int main(){
+/*int main(){
  
     int tt;
     cin >> tt;
@@ -46,4 +46,4 @@ int main(){
     }
  
     return 0;
-}
+}*/

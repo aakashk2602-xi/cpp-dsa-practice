@@ -41,7 +41,7 @@ bool is_sortd(vector<ll>& v){
     return true;
 }
 //remove duplicates or just do erase(unique(v.begin(),v.end()));
-void remove_duplicates(vector<ll> &v){
+ll remove_duplicates(vector<ll> &v){
     ll n = v.size();
     ll i{0};
     for( ll j{0} ; j<n ; j++ ){
@@ -50,6 +50,7 @@ void remove_duplicates(vector<ll> &v){
             i++;
         }
     }
+    return i+1;
 }
 
 int main(){
