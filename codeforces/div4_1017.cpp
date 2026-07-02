@@ -13,3 +13,19 @@ typedef long long ll;
     }
     return 0;
 }*/
+
+//B
+int main(){
+    ll t{0};
+    cin >> t;
+    while (t--) {
+        ll n,m,l,r;
+        cin >> n >> m >> l >> r;
+        if( m<= r ){
+            cout << 0 << " " << m << "\n";
+        }else {
+            cout << r-m << " " << r << "\n";
+        }
+    }
+    return 0;
+}

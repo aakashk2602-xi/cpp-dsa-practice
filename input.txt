@@ -1,8 +1,5 @@
-7
-united states america
-oh my god
-i cant lie
-binary indexed tree
-believe in yourself
-skibidi slay sigma
-god bless america
+4
+4 2 -2 2
+4 1 0 4
+3 3 -1 2
+9 8 -6 3
