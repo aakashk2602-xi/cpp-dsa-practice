@@ -15,7 +15,7 @@ typedef long long ll;
 }*/
 
 //B
-int main(){
+/*int main(){
     ll t{0};
     cin >> t;
     while (t--) {
@@ -28,4 +28,5 @@ int main(){
         }
     }
     return 0;
-}
+}*/
+

@@ -47,3 +47,26 @@ int main(){
  
     return 0;
 }*/
+
+//C
+/*int main(){
+    ll t{0};
+    cin >> t;
+    while (t--) {
+        ll c{0},n{0};
+        string s;
+        cin >> n;
+        cin >> s;
+        for(ll i{0} ; i<s.size()-1 ; i++ ){
+            if( s[i]!=s[i+1] ){
+                ++c;
+            }
+        }
+        if(c==1){
+            cout << 2 << "\n";
+        }else {
+            cout << 1 << "\n";
+        }
+    }
+    return 0;
+}*/
