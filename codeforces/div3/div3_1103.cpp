@@ -34,11 +34,10 @@ int main(){
     ll t;
     cin>>t;
     while(t--){
-        ll k,n;
-        cin>>n>>k;
+        ll n,k;
         string s;
-        cin>>s;
-        for(int i=0;i<n-k;i++){
+        cin>>n>>k>>s;
+        for(ll i=0;i<n-k;i++){
             if(s[i]=='1'){
                 s[i]='0';
                 if(s[i+k]=='0') s[i+k]='1';
