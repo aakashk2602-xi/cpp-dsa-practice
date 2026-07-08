@@ -30,7 +30,7 @@ typedef long long ll;
 }*/
 
 //B - Tatar TV Show
-int main(){
+/*int main(){
     ll t;
     cin>>t;
     while(t--){
@@ -54,4 +54,30 @@ int main(){
         if(flag) cout<<"YES"<<endl;
         else cout<<"NO"<<endl;
     }
-}
+}*/
+
+//C -
+const ll INF = (ll) 1e18;
+ 
+int32_t main() {
+    int t{0};
+    cin >> t;
+ 
+    while (t--) {
+        ll a, b, x;
+        cin >> a >> b >> x;
+        ll ans = INF;
+        ll i = 0;
+        while (a != b) {
+            if (b > a) {
+                swap(a, b);
+            }
+            ans = min(ans, abs(a - b) + i);
+            a /= x;
+            i++;
+        }
+        ans = min(ans, i);
+        cout << ans << "\n";
+    }
+    return 0;
+}  
