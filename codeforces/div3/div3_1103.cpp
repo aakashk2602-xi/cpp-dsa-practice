@@ -56,7 +56,7 @@ typedef long long ll;
     }
 }*/
 
-//C -
+//C - Omsk Programmers
 const ll INF = (ll) 1e18;
  
 int32_t main() {
