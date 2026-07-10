@@ -57,7 +57,7 @@ typedef long long ll;
 }*/
 
 //C - Omsk Programmers
-const ll INF = (ll) 1e18;
+/*const ll INF = (ll) 1e18;
  
 int32_t main() {
     int t{0};
@@ -80,4 +80,4 @@ int32_t main() {
         cout << ans << "\n";
     }
     return 0;
-}  
+}*/
