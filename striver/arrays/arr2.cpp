@@ -2,9 +2,6 @@
 using namespace std;
 typedef long long ll;
 
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
 public:
     // Helper function to reverse a subarray from index start to end
