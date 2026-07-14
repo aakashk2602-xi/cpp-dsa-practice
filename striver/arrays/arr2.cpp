@@ -2,59 +2,78 @@
 using namespace std;
 typedef long long ll;
 
-class Solution {
-public:
-    // Helper function to reverse a subarray from index start to end
-    void reverseArray(vector<int>& nums, int start, int end) {
-        while (start < end) {
-            swap(nums[start], nums[end]);
-            start++;
-            end--;
+// rotation by k element
+/*int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0} ,k{0};
+        string s;
+        cin >> n >> k >> s;
+        vector<ll> v(n,0);
+
+        for( ll i{0} ; i < n ; ++i ) cin >> v[i];
+        k%=n; // normalization
+
+        vector<ll> temp(k,0);
+        if (s == "right") {
+            for (ll i = n - k; i < n; ++i) temp[i - (n - k)] = v[i];
+            for (ll i = n - k - 1; i >= 0; --i) v[i + k] = v[i];
+            for (ll i = 0; i < k; ++i) v[i] = temp[i];
+        }else {
+            for ( ll i{0} ; i < k ; ++i ) temp[i] = v[i];
+            for ( ll i{k} ; i < n ; ++i ) v[i-k] = v[i];
+            for ( ll i{0} ; i < k ; ++i ) v[n-k+i] = temp[i];
         }
+        for( auto i : v ) cout << i << " ";
+        cout << "\n";
     }
+}*/
 
-    // Function to rotate array left or right by k steps
-    vector<int> rotateArray(vector<int>& nums, int k, string direction) {
-        int n = nums.size();
+// move all zeros to the end of the array
+/*int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-        // Edge case: empty or no rotation
-        if (n == 0 || k == 0) return nums;
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0};
+        cin >> n;
+        vector<ll> v(n,0);
+        for(ll i{0} ; i < n ; ++i) cin >> v[i];
 
-        // Normalize k
-        k = k % n;
-
-        if (direction == "right") {
-            // Step 1: Reverse the whole array
-            reverseArray(nums, 0, n - 1);
-
-            // Step 2: Reverse first k elements
-            reverseArray(nums, 0, k - 1);
-
-            // Step 3: Reverse remaining n-k elements
-            reverseArray(nums, k, n - 1);
-        } 
-        else if (direction == "left") {
-            // Step 1: Reverse first k elements
-            reverseArray(nums, 0, k - 1);
-
-            // Step 2: Reverse remaining n-k elements
-            reverseArray(nums, k, n - 1);
-
-            // Step 3: Reverse the whole array
-            reverseArray(nums, 0, n - 1);
+        ll j{n-1} , i{0};
+        while(i<=j && i<n && j>=0){
+            if(v[j]==0){
+                --j;
+                continue;
+            }
+            if( v[i]==0 and v[j]!=0 ){
+                swap(v[i],v[j]);
+                --j;
+            }
+            ++i;
         }
-        return nums;
+        for(auto i : v) cout << i << " ";
+        cout << "\n";
     }
-};
+}*/
 
-int main() {
-    Solution sol;
-    vector<int> nums = {1, 2, 3, 4, 5, 6, 7};
-    int k = 2;
-    string dir = "right";
-    vector<int> result = sol.rotateArray(nums, k, dir);
-    for (int num : result) {
-        cout << num << " ";
+// 
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0};
+        cin >> n;
+        vector<ll> v(n,0);
+        for(ll i{0} ; i < n ; ++i) cin >> v[i];
     }
-    return 0;
 }
