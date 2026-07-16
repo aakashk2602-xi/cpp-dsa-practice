@@ -22,7 +22,7 @@ int main(){
 }*/
 
 // B - ezraft and Array
-void solve() {
+/*void solve() {
     ll  n; 
     cin>>n;
 	if (n == 2) {
@@ -46,8 +46,8 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
  
-	ll t; 
-    cin >> t;
-	while (t--) 
+	ll _{0}; 
+    cin >> _;
+	while (_--) 
 	    solve();
-}
+}*/
