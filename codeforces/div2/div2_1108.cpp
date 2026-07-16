@@ -22,17 +22,32 @@ int main(){
 }*/
 
 // B - ezraft and Array
-int32_t main(){
+void solve() {
+    ll  n; 
+    cin>>n;
+	if (n == 2) {
+		cout << -1 << '\n';
+		return ;
+	}
+	if (n == 1) {
+		cout << 1 << '\n';
+		return;
+	}
+	ll s = 3;
+	cout << 1 << ' ' << 2 << ' ';
+	for (ll i = 3; i <= n; ++i) {
+		cout << s << ' ';
+		s += s;
+	}
+	cout << '\n';
+}
+ 
+int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    ll _{0};
-    cin >> _;
-    while (_--) {
-        ll n{0};
-        cin >> n;
-        if(n==2) cout << -1 << "\n";
-        
-
-    }
+ 
+	ll t; 
+    cin >> t;
+	while (t--) 
+	    solve();
 }
