@@ -49,3 +49,67 @@ typedef long long ll;
         cout << ans << "\n"; 
     }
 }*/
+
+//Longest Subarray with given Sum K(Positives)
+/*better --> O(NlogN)
+int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0},k{0};
+        cin >> n >> k;
+        ll arr[n];
+        for(ll i{0} ; i < n ; ++i) cin >> arr[i];
+        
+        map<ll, int32_t > preSumMap;
+        ll prefixsum{0},maxLen{0};
+        for( ll i{0} ; i < n ; ++i ) {
+            prefixsum += arr[i];
+            if( prefixsum == k ) {
+                maxLen = max(maxLen,i+1);
+            }
+            ll rem = prefixsum - k;
+            if( preSumMap.find(rem) != preSumMap.end() ){
+                ll len = i - preSumMap[rem];
+                maxLen = max(maxLen,len);
+            }
+            if( preSumMap.find(prefixsum) == preSumMap.end() ) {
+                preSumMap[prefixsum] = i;
+            }
+        }
+        cout << maxLen;
+    }
+}*/
+/*better --> O(N)
+int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0},k{0};
+        cin >> n >> k;
+        ll arr[n];
+        for(ll i{0} ; i < n ; ++i) cin >> arr[i];
+        
+        ll left{0}, right{0},maxlen{0},sum{arr[0]};
+        while( right < n ){
+            if( left <= right && sum > k ){
+                sum-=arr[left];
+                left++;
+            }
+            if( sum == k ){
+                maxlen = max(maxlen,right - left + 1 );
+            }
+            right++;
+            if(right<n) sum += arr[right];
+        }
+        cout << maxlen << "\n";
+    }
+}*/
+
+//
