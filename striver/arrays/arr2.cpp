@@ -63,8 +63,8 @@ typedef long long ll;
     }
 }*/
 
-// 
-int main(){
+// union of two sorted arrays with individually distinct numbers
+/*int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -73,8 +73,49 @@ int main(){
     while (_--) {
         ll n{0},m{0};
         cin >> n >> m;
-        vector<ll> v1(n,0),v2(m,0);
-        for(ll i{0} ; i < n ; ++i) cin >> v1[i];
-        for(ll i{0} ; i < m ; ++i) cin >> v2[i];
+        ll arr1[n],arr2[m];
+        for(ll i{0} ; i < n ; ++i) cin >> arr1[i];
+        for(ll i{0} ; i < m ; ++i) cin >> arr2[i];
+        ll i{0},j{0};
+        vector<ll>ans;
+        while (i<n && j<m) {
+            if( arr1[i] < arr2[j] ){
+                ans.push_back(arr1[i]);
+                ++i;
+            }else if ( arr1[i] > arr2[j] ) {
+                ans.push_back(arr2[i]);
+                ++j;
+            }else {
+                ans.push_back(arr1[i]);
+                ++i; ++j;
+            }
+        }
+        if( i == n ) {
+            for(; j < m ; j++) ans.push_back(arr2[j]);
+        }else if ( j == m ) {
+            for(; i < n ; i++) ans.push_back(arr1[i]);
+        }
+        for(auto i : ans) cout << i << " ";
+        cout << "\n";
     }
-}
+}*/
+
+// Find the Missing Number
+/*int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        ll n{0};
+        cin >> n;
+        ll arr1[n-1] , sum{0};
+        for(ll i{0} ; i < n-1 ; ++i){
+            cin >> arr1[i];
+            sum += arr1[i];
+        }
+        cout << (n*(n+1)/2) - sum <<"\n";
+        
+    }
+}*/
