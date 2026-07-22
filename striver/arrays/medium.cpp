@@ -2,6 +2,61 @@
 using namespace std;
 typedef long long ll;
 
+// Two Sum
+
+class Solution {
+public:
+    // Variant 1: Check if two numbers sum to target using two-pointer approach
+    string twoSumExists(vector<int> arr, int target) {
+        int n = arr.size();
+        // Create a vector of pairs to remember original indices after sorting
+        vector<pair<int, int>> numsWithIndex;
+        for (int i = 0; i < n; i++) {
+            numsWithIndex.push_back({arr[i], i});
+        }
+        // Sort based on the element values
+        sort(numsWithIndex.begin(), numsWithIndex.end());
+
+        int left = 0, right = n - 1;
+        // Loop until pointers cross
+        while (left < right) {
+            int sum = numsWithIndex[left].first + numsWithIndex[right].first;
+            if (sum == target) {
+                return "YES";  // Pair found
+            } else if (sum < target) {
+                left++;  // Need bigger sum, move left pointer right
+            } else {
+                right--; // Need smaller sum, move right pointer left
+            }
+        }
+        return "NO";  // No pair found
+    }
+
+    // Variant 2: Return original indices of two numbers that sum to target
+    vector<int> twoSumIndices(vector<int> arr, int target) {
+        int n = arr.size();
+        vector<pair<int, int>> numsWithIndex;
+        for (int i = 0; i < n; i++) {
+            numsWithIndex.push_back({arr[i], i});
+        }
+        sort(numsWithIndex.begin(), numsWithIndex.end());
+
+        int left = 0, right = n - 1;
+        while (left < right) {
+            int sum = numsWithIndex[left].first + numsWithIndex[right].first;
+            if (sum == target) {
+                // Return original indices
+                return {numsWithIndex[left].second, numsWithIndex[right].second};
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return {-1, -1};  // No pair found
+    }
+};
+
 int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -13,19 +68,10 @@ int32_t main(){
         cin >> n >> k;
         ll arr[n];
         for(ll i{0} ; i < n ; ++i) cin >> arr[i];
-        
-        ll left{0}, right{0},maxlen{0},sum{arr[0]};
-        while( right < n ){
-            while( left <= right && sum > k ){
-                sum-=arr[left];
-                left++;
-            }
-            if( sum == k ){
-                maxlen = max(maxlen,right - left + 1 );
-            }
-            right++;
-            if(right<n) sum += arr[right];
+
+        for( ll i{0} ; i < n ;++i ){
+            ll rem = 0;
         }
-        cout << maxlen << "\n";
     }
 }
+
