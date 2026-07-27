@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdint>
 using namespace std;
 typedef long long ll;
 
@@ -9,24 +10,15 @@ int32_t main(){
     ll _{0};
     cin >> _;
     while (_--) {
-        ll n{0},sum{0};
+        ll n{0},L{0},R{INT64_MAX};
         cin >> n;
-        vector<ll> weights(n,0);
-        for ( ll i{0} ; i < n ; ++i ){
-            cin >> weights[i];
-            sum += weights[i];
+        for ( ll i{1} ; i <= n ; ++i ){
+            ll w{0};
+            cin >> w;
+            if(i&1) R = min(R,w);
+            else L = max(L,w);
         }
-        ll avg = ceil(double(sum)/double(n));
-
-        ll flag{1};
-        for ( ll i{0} ; i < n ; ++i ){
-            if(avg == weights[i]){
-                flag = 0;
-                break;
-            }
-        }
-        if(flag) cout << "YES\n";
-        else cout << "NO\n";
+        cout << ( n%2==0 && L+2<=R ? "YES\n" : "NO\n" );
     }
     return 0;
 }
