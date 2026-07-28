@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
-#include <cstdint>
 using namespace std;
 typedef long long ll;
 
-int32_t main(){
+//A - Threshold Movement
+/*int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
@@ -21,4 +21,6 @@ int32_t main(){
         cout << ( n%2==0 && L+2<=R ? "YES\n" : "NO\n" );
     }
     return 0;
-}
+}*/
+
+//B - 
