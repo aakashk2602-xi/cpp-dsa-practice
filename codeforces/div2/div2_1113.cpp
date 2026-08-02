@@ -37,18 +37,3 @@ typedef long long ll;
 }*/
 
 //B
-int32_t main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    ll _{0};
-    cin >> _;
-    while (_--) {
-        ll n{0},m{0};
-        cin >> n >> m ;
-        vector<ll> a(n,0) , b(m,0);
-        for ( ll i{0} ; i < n ; ++i ) cin >> a[i];
-        for ( ll i{0} ; i < m ; ++i ) cin >> b[i];
-    }
-    return 0;
-}
