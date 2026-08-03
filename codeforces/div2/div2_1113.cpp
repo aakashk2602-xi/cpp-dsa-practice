@@ -37,3 +37,30 @@ typedef long long ll;
 }*/
 
 //B
+int main() {
+	int T;
+	scanf("%d", &T);
+	for (int _ = 0; _ < T; ++_) {
+		int n, m;
+		scanf("%d %d", &n, &m);
+		vector<int> a(n), b(m);
+		for (int &x : a) {
+		    scanf("%d", &x);
+		}
+		for (int &x : b) {
+			scanf("%d", &x);
+		}
+		sort(a.begin(), a.end());
+		sort(b.begin(), b.end());
+
+		if (n < 2 * m) {
+			puts("NO");
+			continue;
+		}
+
+		int i = 0;
+		while (i < m && a[i] < b[i] && b[i] < a[n - m + i]) ++i;
+		puts(i < m ? "no" : "Yes");
+	}
+	return 0;
+}
