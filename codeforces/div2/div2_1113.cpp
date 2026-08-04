@@ -37,30 +37,40 @@ typedef long long ll;
 }*/
 
 //B
-int main() {
-	int T;
-	scanf("%d", &T);
-	for (int _ = 0; _ < T; ++_) {
-		int n, m;
-		scanf("%d %d", &n, &m);
-		vector<int> a(n), b(m);
-		for (int &x : a) {
-		    scanf("%d", &x);
-		}
-		for (int &x : b) {
-			scanf("%d", &x);
-		}
-		sort(a.begin(), a.end());
-		sort(b.begin(), b.end());
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    vector<int> a(n), b(m);
+    
+    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < m; i++) cin >> b[i];
+ 
+    if (n < 2*m) {
+        cout << "NO\n";
+        return;
+    }
+    else {
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end());
+        for (int i = 0; i < m; i++) {
+            if (a[i] > b[i] || a[n - m + i] < b[i]) {
+                cout << "NO\n";
+                return;
+            }
+        }
+        cout << "YES\n";
+        return;
+    }
+}
 
-		if (n < 2 * m) {
-			puts("NO");
-			continue;
-		}
+int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-		int i = 0;
-		while (i < m && a[i] < b[i] && b[i] < a[n - m + i]) ++i;
-		puts(i < m ? "no" : "Yes");
-	}
-	return 0;
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        solve();
+    }
+    return 0;
 }
