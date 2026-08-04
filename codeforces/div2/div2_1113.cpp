@@ -37,7 +37,7 @@ typedef long long ll;
 }*/
 
 //B
-void solve() {
+/*void solve() {
     int n, m;
     cin >> n >> m;
     vector<int> a(n), b(m);
@@ -73,4 +73,4 @@ int32_t main(){
         solve();
     }
     return 0;
-}
+}*/
