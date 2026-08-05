@@ -58,24 +58,40 @@ typedef long long ll;
 }*/
 
 //C
-int32_t main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    ll _{0};
-    cin >> _;
-    while (_--) {
-        ll n{0};
-        string a ,b ;
-        cin >> n >> a >> b ;
-        ll counteven{0}, countodd{0};
-        for(ll i{0} ; i < n ; ++i ){
-            if(a[i]=='1'){
-                if(i&1) ++countodd;
-                else ++counteven;
+/*int32_t main(){
+      int _{0};
+      cin>>_;
+      while(_--){
+            int n;
+            cin>>n;
+            string a,b;
+            cin>>a;
+            cin>>b;
+            ll ae=0 , ao=0 , bo=0 , be=0;
+            for(int i=0;i<n;i++){
+                  if(a[i]=='1'){
+                        if(i%2==0){
+                              ae++;
+                        }
+                        else{
+                              ao++;
+                        }
+                  }
+                   if(b[i]=='1'){
+                        if(i%2==0){
+                              be++;
+                        }
+                        else{
+                              bo++;
+                        }
+                  }
             }
-        }
-        if()
-    }
-    return 0;
-}
+            if(ae==be && ao==bo){
+                  cout<<"Yes"<<endl;
+            }
+            else{
+                  cout<<"No"<<endl;
+            }
+      }
+      return 0;
+}*/
