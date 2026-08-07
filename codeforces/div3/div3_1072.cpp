@@ -10,8 +10,10 @@ int32_t main(){
     cin >> _;
     while (_--) {
         ll n{0};
-        cin >> n;
-        
+        cin>> n;
+        if(n<=3) cout<< n;
+        else cout<< n%2;
+        cout<< "\n";
     }
     return 0;
 }
