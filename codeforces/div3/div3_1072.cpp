@@ -2,10 +2,11 @@
 using namespace std;
 typedef long long ll;
 
-int32_t main(){
+// A - Social Experiment
+/*int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+ 
     ll _{0};
     cin >> _;
     while (_--) {
@@ -16,4 +17,21 @@ int32_t main(){
         cout<< "\n";
     }
     return 0;
-}
+}*/
+
+// B - Hourglass
+/*int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    ll _{0};
+    cin >> _;
+    while (_--) {
+        int32_t s{0},k{0},m{0};
+        cin>> s >> k >> m;
+
+        if (s <= k) cout << max(0, s - m % k) << '\n';
+        else cout << (((m % (2 * k)) < k) ? s - m % k : k - m % k) << '\n';
+    }
+    return 0;
+}*/
