@@ -33,6 +33,9 @@ int32_t main(){
     ll _{0};
     cin>>_;
     while(_--){
+        size_t n{0};
+        string s;
+        cin>>n>>s;
         
     }
     return 0;
