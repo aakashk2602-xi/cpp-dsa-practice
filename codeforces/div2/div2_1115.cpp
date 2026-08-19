@@ -25,7 +25,7 @@ typedef long long ll;
     return 0;
 }*/
 
-// B - Always Changing --second attempt
+// B - Always Changing --third and final attempt
 int32_t main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -46,20 +46,12 @@ int32_t main(){
         vector<size_t> brac0,brac1;
         for(size_t i{0};i<start1.size();++i) brac1.push_back(end1[i]-start1[i]+1);
         for(size_t i{0};i<start0.size();++i) brac0.push_back(end0[i]-start0[i]+1);
-        size_t i{0},j{0};
-        bool flag{1};
-        ll count{0};
-        while(i<brac1.size() && j<brac1.size()){
-            if(brac1[i]>1){--brac1[i];count++;i++;}
-            if(brac0[i]>1){--brac0[i];count++;j++;}
-            if(brac1[i]<1 && brac0[i]<1){
-                flag=0;
-                i=0;
-                j=0;
-            }
-        }
-        if(flag) cout<<count<<"\n";
-        else cout<<-1<<"\n";
+        ll count0{0},count1{0};
+        for(ll i{0};i<start0.size();++i) {if(start0[i]>1) count0+=(start0[i]-1);}
+        for(ll i{0};i<start1.size();++i) {if(start1[i]>1) count1+=(start1[i]-1);}
+        if(count0==count1) cout<<count0+count1;
+        else cout<<-1;
+        cout<<'\n';
     }
     return 0;
 }
