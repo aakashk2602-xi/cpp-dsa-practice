@@ -49,13 +49,58 @@ typedef long long ll;
 }*/
 
 // Shortest job first(SJF) CPU Scheduling
-bool solve(){
-    ll n{0},count{0};
+/*void solve(){
+    ll n{0},total{0},wt_total{0};
     cin>>n;
-    vector<ll> bill(n,0);
-    for(size_t i{0};i<n;++i) cin>>bill[i];
-}
+    vector<ll> time(n,0);
+    for(size_t i{0};i<n;++i) cin>>time[i];
+    sort(time.begin(),time.end());
+    for(size_t i{0};i<n;++i) {wt_total+=total; total+=time[i];}
+    cout<<wt_total/n<<'\n';
+}*/
+
+// Jump - I
+/*bool solve(){
+    size_t n{0},max_index{0};
+    cin>>n;
+    vector<size_t> jump(n,0);
+    for(size_t i{0};i<n;++i) cin>>jump[i];
+    for(size_t i{0};i<n;++i){
+        if(max_index<i) return false;
+        max_index=max(max_index,i+jump[i]);
+    }
+    return true;
+}*/
+
+// Jump - II
+//through recursion
+/*size_t solve(vector<size_t>& v,size_t n , size_t index , size_t jumps ){
+    if(index>=n-1) return jumps;
+    size_t mini=INT_MAX;
+    for(size_t i{0};i<n;++i) mini = min(mini,solve(v,n,index+1,jumps+1));
+    return mini;
+}*/
+//
+
+//through greedy
+/*void solve(){
+    ll n{0};
+    cin>>n;
+    vector<size_t> potential(n,0);
+    for(size_t i{0};i<n;++i) cin>>potential[i];
+    size_t l{0},r{0};
+    ll jumps{0};
+    while(r<n-1){
+        size_t farthest{0};
+        for(auto index{l};index<r;++index) farthest=max(farthest,index+potential[index]);
+        l=r+1;
+        r=farthest;
+        ++jumps;
+    }
+
+}*/
+
 int32_t main(){
-    cout<<solve();
+    cout<<'\n';
     return 0;
 }
