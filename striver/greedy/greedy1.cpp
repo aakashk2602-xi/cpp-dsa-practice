@@ -80,8 +80,6 @@ typedef long long ll;
     for(size_t i{0};i<n;++i) mini = min(mini,solve(v,n,index+1,jumps+1));
     return mini;
 }*/
-//
-
 //through greedy
 /*void solve(){
     ll n{0};
@@ -100,7 +98,43 @@ typedef long long ll;
 
 }*/
 
-int32_t main(){
-    cout<<'\n';
-    return 0;
-}
+// Job sequencing
+/*struct Job{
+   ll id{0};
+   ll dead{0};
+   ll profit{0}; 
+};
+
+class Solution {
+    public:
+        inline bool static comparison(Job a, Job b){return (a.profit>b.profit);}
+        pair <ll,ll> JobScheduling(Job arr[], int n){
+        sort(arr, arr+n, comparison);
+        ll maxi{-1};
+        for (ll i{1};i<n;i++) maxi = max(maxi, arr[i].dead);
+        ll hash[maxi+1];
+        for(ll i{0}; i <= maxi; i++) hash[i] = -1;  
+        ll countJobs=0,jobProfit = 0;
+        for(ll i{0};i<n;i++){
+            for(ll j{arr[i].dead};j>0;j--){
+                if (hash[j]==-1) {
+                    hash[j]=i;
+                    countJobs++;
+                    jobProfit+=arr[i].profit;  
+                    break;
+                }
+            }
+        }
+    return make_pair(countJobs, jobProfit);
+    }
+};
+
+int main() {
+   ll n{4};
+   Job arr[] = {{1,4,20},{2,1,10},{3,2,40},{4,2,30}};
+
+   Solution ob;
+   pair <ll,ll> ans = ob.JobScheduling(arr, n);
+   cout << ans.first << " " << ans.second << endl;
+   return 0;
+}*/
