@@ -117,7 +117,7 @@ class Solution {
         ll countJobs=0,jobProfit = 0;
         for(ll i{0};i<n;i++){
             for(ll j{arr[i].dead};j>0;j--){
-                if (hash[j]==-1) {
+                if(hash[j]==-1){
                     hash[j]=i;
                     countJobs++;
                     jobProfit+=arr[i].profit;  
