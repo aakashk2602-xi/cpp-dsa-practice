@@ -18,7 +18,6 @@ int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
-        
     }
     return 0;
 }
