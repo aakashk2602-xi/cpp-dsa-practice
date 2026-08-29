@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -15,7 +14,7 @@ typedef long long ll;
 }*/
 
 // B - Yuu Koito and Minimum Absolute Sum
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
@@ -39,6 +38,15 @@ int32_t main(){
         for(auto i:v) cout<<i<<" ";
         cout<<"\n";
 
+    }
+    return 0;
+}*/
+
+// C1 - Renako Amaori and XOR Game (easy version)
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
     }
     return 0;
 }
