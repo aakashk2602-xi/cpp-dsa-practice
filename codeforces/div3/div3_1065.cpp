@@ -47,6 +47,45 @@ int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
+        vector<ll>a(n,0),b(n,0);
+        ll a0{0},a1{0},b0{0},b1{0};
+        for(ll i{0};i<n;++i){
+            cin>>a[i];
+            if(a[i]==1) ++a1;
+            else ++a0;
+        }
+        for(ll i{0};i<n;++i){
+            cin>>b[i];
+            if(b[i]==1) ++b1;
+            else ++b0;
+        }
+        cout<<a1<<" "<<b1<<" \n";
+        // even=ajisai and odd=mai
+        for(ll i{0};i<n;i+=2){
+            if(a[i]==0 && b[i]==1 && a1&0){
+                swap(a[i],b[i]);
+                a1++;
+                cout<<i<<" \n";
+                break;
+            }
+        }
+        for(ll i{1};i<n;i+=2){
+            if(b[i]==0 && a[i]==1 && b1&0){
+                swap(a[i],b[i]);
+                b1++;
+                break;
+            }
+        }
+        if(a1&1){
+            if(b1&1) cout<<"Tie";
+            else cout<<"Ajisai";
+        }else if(b1&1){
+            if(a1&1) cout<<"Tie";
+            else cout<<"Mai";
+        }else{
+            cout<<"Tie";
+        }
+        cout<<"\n";
     }
     return 0;
 }
