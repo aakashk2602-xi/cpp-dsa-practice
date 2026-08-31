@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdint>
 using namespace std;
 typedef long long ll;
 
@@ -59,33 +60,52 @@ int32_t main(){
             if(b[i]==1) ++b1;
             else ++b0;
         }
-        cout<<a1<<" "<<b1<<" \n";
-        // even=ajisai and odd=mai
-        for(ll i{0};i<n;i+=2){
-            if(a[i]==0 && b[i]==1 && a1&0){
-                swap(a[i],b[i]);
-                a1++;
-                cout<<i<<" \n";
+        ll last_unquals{0};
+        for(ll i{n-1};i>=0;--i){
+            if(a[i]!=b[i]){
+                last_unquals=i;
                 break;
             }
         }
-        for(ll i{1};i<n;i+=2){
-            if(b[i]==0 && a[i]==1 && b1&0){
-                swap(a[i],b[i]);
-                b1++;
-                break;
+        //even=ajisai and odd=mai
+        if(last_unquals&1){
+            for(ll i{0};i<n;i+=2){
+                if(a[i]!=b[i] && a1%2==0){
+                    swap(a[i],b[i]);
+                    if(a1){a1--;b1++;}
+                    else{a1++;b1--;}
+                }
             }
-        }
-        if(a1&1){
-            if(b1&1) cout<<"Tie";
-            else cout<<"Ajisai";
-        }else if(b1&1){
-            if(a1&1) cout<<"Tie";
-            else cout<<"Mai";
+            for(ll i{1};i<n;i+=2){
+                if(b[i]!=a[i] && b1%2==0){
+                    swap(a[i],b[i]);
+                    if(b1){b1--;a1++;}
+                    else{b1++;a1--;}
+                }
+            }
         }else{
-            cout<<"Tie";
+            for(ll i{1};i<n;i+=2){
+                if(b[i]!=a[i] && b1%2==0){
+                    swap(a[i],b[i]);
+                    if(b1){b1--;a1++;}
+                    else{b1++;a1--;}
+                }
+            }
+            for(ll i{0};i<n;i+=2){
+                if(a[i]!=b[i] && a1%2==0){
+                    swap(a[i],b[i]);
+                    if(a1){a1--;b1++;}
+                    else{a1++;b1--;}
+                }
+            }
         }
-        cout<<"\n";
+        
+        if(a1%2==b1%2) cout<<"Tie\n";
+        else{
+            if(a1%2==1 && b1%2==0) cout<<"Ajisai\n";
+            else if(a1%2==0 && b1%2==1) cout<<"Mai\n";
+            else cout<<"Tie\n";
+        }
     }
     return 0;
 }
