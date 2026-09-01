@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <cstdint>
 using namespace std;
 typedef long long ll;
 
@@ -44,7 +43,7 @@ typedef long long ll;
 }*/
 
 // C1 - Renako Amaori and XOR Game (easy version)
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
@@ -59,6 +58,73 @@ int32_t main(){
             cin>>b[i];
             if(b[i]==1) ++b1;
             else ++b0;
+        }
+        ll last_unquals{0};
+        for(ll i{n-1};i>=0;--i){
+            if(a[i]!=b[i]){
+                last_unquals=i;
+                break;
+            }
+        }
+        //even=ajisai and odd=mai
+        if(last_unquals&1){
+            for(ll i{0};i<n;i+=2){
+                if(a[i]!=b[i] && a1%2==0){
+                    swap(a[i],b[i]);
+                    if(a1){a1--;b1++;}
+                    else{a1++;b1--;}
+                }
+            }
+            for(ll i{1};i<n;i+=2){
+                if(b[i]!=a[i] && b1%2==0){
+                    swap(a[i],b[i]);
+                    if(b1){b1--;a1++;}
+                    else{b1++;a1--;}
+                }
+            }
+        }else{
+            for(ll i{1};i<n;i+=2){
+                if(b[i]!=a[i] && b1%2==0){
+                    swap(a[i],b[i]);
+                    if(b1){b1--;a1++;}
+                    else{b1++;a1--;}
+                }
+            }
+            for(ll i{0};i<n;i+=2){
+                if(a[i]!=b[i] && a1%2==0){
+                    swap(a[i],b[i]);
+                    if(a1){a1--;b1++;}
+                    else{a1++;b1--;}
+                }
+            }
+        }
+        
+        if(a1%2==b1%2) cout<<"Tie\n";
+        else{
+            if(a1%2==1 && b1%2==0) cout<<"Ajisai\n";
+            else if(a1%2==0 && b1%2==1) cout<<"Mai\n";
+            else cout<<"Tie\n";
+        }
+    }
+    return 0;
+}*/
+
+// C2 - Renako Amaori and XOR Game (hard version)
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>a(n,0),b(n,0);
+        ll a1{0},b1{0};
+        for(ll i{0};i<n;++i){
+            cin>>a[i];
+            a[i]%=2;
+            if(a[i]==1) ++a1;
+        }
+        for(ll i{0};i<n;++i){
+            cin>>b[i];
+            b[i]%=2;
+            if(b[i]==1) ++b1;
         }
         ll last_unquals{0};
         for(ll i{n-1};i>=0;--i){

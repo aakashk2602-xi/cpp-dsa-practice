@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 
 // A - Beautiful Average 
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
@@ -15,4 +15,6 @@ int32_t main(){
         }
         cout<<avg<<"\n";
     }
-}
+}*/
+
+//
