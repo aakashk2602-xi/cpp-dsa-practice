@@ -20,7 +20,7 @@ typedef long long ll;
 }*/
 
 // B - Unconventional Pairs
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while (_--) {
         ll n{0};cin>>n;
@@ -39,4 +39,59 @@ int32_t main(){
         cout<<ans<<"\n";
     }
     return 0;
+}*/
+
+// C - MEX rose - paras's solution
+/*void solve() {
+    ll n,k;
+    cin >> n >> k;
+    vector<ll> a(n);
+    map<ll,ll> mp;
+    for(ll i=0;i<n;i++){
+        cin >> a[i];
+        mp[a[i]]++;
+    }
+    ll mex =0;
+    for(int i=0;i<=n;i++){
+        if(mp[i] ==0){
+            mex = i;
+            break;
+        }
+    }
+    if(mex ==k){
+        cout << 0 << endl;
+    }
+    else if(mex > k){
+        //mtlb mex ki value required se jyada hnn toh hame count nikalke unhe minus krna hnn
+        ll count =0;
+        count += mp[k];
+        // for(ll i=k;i<mex ;i++){
+        //     count += mp[k];
+        // }
+        cout << count << endl;
+    }
+    else if(mex < k){
+        //mtlb mex ki value required value se kam hnn
+        ll count =0;
+        for(ll i=mex ;i<k;i++){
+            if(mp[i] ==0){
+                count++;
+            }
+        }
+        ll anss = max(count , mp[k]);
+       // count += mp[k];
+        cout << anss << endl;
+    }
 }
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}*/
