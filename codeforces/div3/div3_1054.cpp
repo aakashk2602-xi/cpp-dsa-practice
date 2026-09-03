@@ -24,7 +24,19 @@ int32_t main(){
     ll _{0};cin>>_;
     while (_--) {
         ll n{0};cin>>n;
-        
+        vector<ll> v(n,0);
+        for(ll i{0};i<n;i++) cin>>v[i];
+        sort(v.begin(),v.end());
+        ll diff{0},ans{0};
+        if(n==2){
+            ans=v[1]-v[0];
+        }else{
+            for(ll i{0};i<=n-2;i+=2){
+                diff=abs(v[i+1]-v[i]);
+                ans=max(diff,ans);
+            }
+        }
+        cout<<ans<<"\n";
     }
     return 0;
 }
