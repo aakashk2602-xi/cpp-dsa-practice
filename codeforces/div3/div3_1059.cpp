@@ -16,4 +16,10 @@ typedef long long ll;
     }
 }*/
 
-//
+// B - 
+int32_t main(){
+    ll _{0};cin>>_;
+    while (_--) {
+        
+    }
+}
