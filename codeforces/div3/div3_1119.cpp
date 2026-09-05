@@ -1,14 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
-// A
-int32_t main(){
+ 
+// A - Moo Language School
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
-        ll n{0};cin>>n;
-        if(n&1){cout<<0<<"\n";continue;}
-        cout<<n/4+1<<"\n";
+        ll n{0},k{0};cin>>n>>k;
+        string s;cin>>s;
+        ll ans{0};
+        for(ll i{0};i<n;i+=k){
+            bool flag{false};
+            for(ll j{i};j<i+k;++j){
+                if(s[j]=='0') {flag=true;}
+            }
+            if(!flag){ans++;}
+        }
+        cout<<ans<<"\n";
     }
     return 0;
-}
+}*/
+
+// B - Minus Two
