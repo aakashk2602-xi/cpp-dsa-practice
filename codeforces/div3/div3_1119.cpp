@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
- 
+#define all(x) x.begin(), x.end()
+#define rall(v) v.rbegin(), v.rend()
+#define sort(x) sort(all(x))
+#define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
+
 // A - Moo Language School
 /*int32_t main(){
     ll _{0};cin>>_;
@@ -41,6 +45,45 @@ typedef long long ll;
         }
         
         cout<<max(a,max(b,c))<<endl;
+    }
+    return 0;
+}*/
+
+// D - Mex Multiset
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};
+        cin>>n;
+        vector<ll> v(n,0);
+        vector<ll> index;
+        for(ll i{0};i<n;++i) cin>>v[i];
+        ll count0{0};
+        for(ll i{0};i<n;++i){
+            if(v[i]==0) {++count0;index.push_back(i);}
+        }
+        if(count0==0){
+            cout<<"Yes\n";
+            string ans(n, 'A');
+            cout<<ans<<"\n";
+        }else if(count0==1){
+            cout<<"No\n";
+        }else{
+            cout<<"Yes\n";
+            bool flagA=true;
+            string ans;
+            for(ll i{0};i<n;++i){
+                if(flagA && v[i]==0){
+                    flagA=false;
+                    ans+="A";
+                }else if(!(flagA) && v[i]==0){
+                    ans+="B";
+                }else{
+                    ans+="C";
+                }
+            }
+            cout<<ans<<"\n";
+        }
     }
     return 0;
 }*/

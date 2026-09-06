@@ -1,0 +1,9 @@
+Yes
+CABCCC
+Yes
+ABBB
+No
+Yes
+AAAA
+Yes
+ABBCC
