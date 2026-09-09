@@ -47,37 +47,12 @@ typedef long long ll;
 /*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
-        ll x{0},y{0};
-        cin>>x>>y;
-        ll copyx{x},copyy{y};
-        ll ans{-1};
-        ll count{-1};
-        if(x>y){
-            while(x!=y){
-                ans=max(ans,(x^y));
-                --x;++y;
-            }
-            ans=max(ans,x+y);
-            while(copyx>=0){
-                ++count;
-                if(ans==(copyx^copyy)) {--count;break;}
-                --copyx;++copyy;
-            }
-            if(ans==copyx+copyy) ++count;
-        }else{
-            while(x>0){
-                ans=max(ans,(x^y));
-                --x;++y;
-            }
-            ans=max(ans,x+y);
-            while(copyx>=0){
-                ++count;
-                if(ans==(copyx^copyy)) {--count;break;}
-                --copyx;++copyy;
-            }
-            if(ans==copyx+copyy) ++count;
+        ll x{0},y{0};cin>>x>>y;
+        ll s{x+y};
+        for(ll d=(1<<30);d>=1;d>>=1){
+            if((s & d) != 0 && x >= d) x-=d;
         }
-        cout<<ans<<" "<<count<<"\n";
+        cout<<s<<" "<<x<<"\n"; 
     }
     return 0;
 }*/
