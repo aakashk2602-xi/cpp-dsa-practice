@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdint>
 using namespace std;
 typedef long long ll;
 #define all(x) x.begin(), x.end()
@@ -17,44 +18,30 @@ typedef long long ll;
     }
 }*/
 
-// B - Carrot Chopdown (Easy Version)
+// B - Carrot Chopdown (Easy Version) --Mehul's Help!!
 int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0},m{0};cin>>n>>m;
         vector<ll> v(n,0);
-        for(ll i{0};i<n;i++) cin>>v[i];
+        vector<ll> f(m+1,0);
+        for(ll i{0};i<n;i++){
+            cin>>v[i];
+            f[v[i]]++;
+        }
 
-        sort(v);
-        ll everuncount{1},evecount{1};
-        ll oddruncount{1},oddcount{1};
-        for(ll i{0};i<n-1;++i){
-            if(v[i]%2==0){
-                if(v[i]==v[i+1]) everuncount++;
-                else everuncount=1;
-                evecount=max(evecount,everuncount);
-            }else{
-                if(v[i]==v[i+1]) oddruncount++;
-                else oddruncount=1;
-                oddcount=max(oddcount,oddruncount);
-            }
+        ll ans{0};
+        ll shorter_than_currX{0};
+        for(ll x{1};x<=m;x++){
+            shorter_than_currX+=f[x-1];     //prefix freq sum
+            ll tmp=0;
+            tmp= n-shorter_than_currX;
+            if(2*x<=m) tmp+=f[2*x];
+
+            ans=max(ans,tmp);
         }
-        //cout<<oddcount<<" "<<evecount<<"\n";
-        if(oddcount>=evecount){
-            ll res{0};
-            for(ll i{0};i<n;++i){
-                v[i]--;
-                if(v[i]==1) ++res;
-            }
-            cout<<n+res<<"\n";
-        }else{
-            ll res{0},fres{0};
-            for(ll i{0};i<n;++i){
-                if(v[i]>=2) {v[i]-=2;++fres;}
-                if(v[i]==2) ++res;
-            }
-            cout<<n+res<<"\n";
-        }
+        cout<<ans<<"\n";
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
 }
