@@ -7,18 +7,21 @@ typedef long long ll;
 #define sort(x) sort(all(x))
 #define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
 
-// 4C - Registration system Beta div2 round 4
+// 1520D - Same Differences div3 4 719
 int32_t main(){
-    ll _{1};
+    ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
-        map<string,ll> mpp;
-        while(n--){
-            string s;cin>>s;
-            if(mpp[s]==0) cout<<"OK\n";
-            else cout<<s<<mpp[s]<<"\n";
-            mpp[s]++;
+        map<ll ,ll> mpp;
+        ll count{0};
+        ll x{0};
+        for(ll i{0};i<n;++i){
+            cin>>x;
+            x-=i;
+            count+=mpp[x];
+            mpp[x]++;
         }
+        cout<<count<<"\n";
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
