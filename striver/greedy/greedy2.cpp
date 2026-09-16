@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+#define INF 1000000000000000000LL
+#define all(x) x.begin(), x.end()
+#define rall(v) v.rbegin(), v.rend()
+#define sort(x) sort(all(x))
+#define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
 
 // N meetings in one room
 /*struct meet{
@@ -110,3 +115,27 @@ int32_t main(){
 }*/
 
 // Minimum number of platforms required for a railway station
+/*ll solve(ll& n,vector<ll>& arrival,vector<ll>& departure){
+    sort(arrival);
+    sort(departure);
+    ll i{0},j{0},count{0};
+    ll ans{0};
+    while(i<n && j<n){
+        if(arrival[i]<=departure[j]) {++count; ++i;}
+        else{ --count; ++j;}
+        ans=max(ans,count);
+    }
+    return ans;
+}
+
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll> arrival(n,0),departure(n,0);
+        for(ll i{0};i<n;++i) cin>>arrival[i];
+        for(ll i{0};i<n;++i) cin>>departure[i];
+        cout<<solve(n,arrival,departure)<<"\n";
+    }
+    return 0;
+}*/
