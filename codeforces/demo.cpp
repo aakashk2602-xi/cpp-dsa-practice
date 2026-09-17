@@ -7,7 +7,7 @@ typedef long long ll;
 #define sort(x) sort(all(x))
 #define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
 
-// 1520D - Same Differences div3 4 719
+// 1520D - Same Differences div3 719 D
 int32_t main(){
     ll _{0};cin>>_;
     while(_--){

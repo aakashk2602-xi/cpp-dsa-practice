@@ -12,13 +12,11 @@ typedef long long ll;
 
 
 int32_t main(){
-    ll _{0};cin>>_;
+    ll _{1};
     while(_--){
         ll n{0};cin>>n;
-        vector<ll> arr(n,0);
-        for(ll i{0};i<n;i++) cin>> arr[i];
-
-        
+        vector<ll> v(n,0);
+        for(ll i{0};i<n;i++) cin>> v[i];
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
