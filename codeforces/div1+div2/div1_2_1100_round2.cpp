@@ -8,7 +8,7 @@ typedef long long ll;
 #define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
 
 // A - Slimes on a Line
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
@@ -20,8 +20,37 @@ int32_t main(){
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
-}
+}*/
 
+// B - Absolute Cinema
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>a(n,0),b(n,0);
+        for(ll i{0};i<n;i++) cin>> a[i];
+        for(ll i{0};i<n;i++) cin>> b[i];
+        
+        if(n==1){
+            cout<<a[0]+b[0]<<"\n";
+        }else{
+            for(ll i{0};i<n;i++){
+                if(a[i]>b[i]) swap(a[i],b[i]);
+            }
+            ll sum_b{0};
+            ll a_max{-1};
+            for(ll i{0};i<n;i++){
+                if(a_max<a[i]) a_max=max(a_max,a[i]);
+                sum_b+=b[i];
+            }
+            cout<<sum_b+a_max<<"\n";
+        }
+
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
 
 // C1 - We Be Flipping (Easy Version)
 /*int32_t main(){
