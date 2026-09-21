@@ -61,3 +61,15 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces div2 377 A - Buy a Shovel
+int32_t main(){
+    ll k{0},r{0};cin>>k>>r;
+    ll ans{LLONG_MAX};
+    for(ll i{1};i<=9;i++) if((k*i)%10==0 || (k*i)%10==r) {ans=min(ans,i); continue;}
+    cout<<ans<<"\n";
+
+    
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}
