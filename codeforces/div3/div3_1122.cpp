@@ -20,3 +20,13 @@ typedef long long ll;
     return 0;
 }*/
 
+// B - Three Piles
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll a{0},b{0},c{0};cin>>a>>b>>c;
+        cout<<max(abs(a-b),abs(a+c-b))<<"\n";
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
