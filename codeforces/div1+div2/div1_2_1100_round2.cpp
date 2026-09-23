@@ -60,14 +60,19 @@ typedef long long ll;
         vector<ll>v(n,0);
         for(ll i{0};i<n;i++) cin>> v[i];
 
-        ll countpos{0};
-        for(ll i{0};i<n;i++) if(v[i]>0) ++countpos;
-
-
-        
-        if(countpos==0) cout<<"0\n \n";
-        else if(countpos==n) cout<<"1\n"<<n<<"\n";
-        else cout<<"\nWhat the heck. I'll solve this tomorrow\n";
+        ll parity{0};
+        vector<ll> ans;
+        for(ll i{n-1};i>=0;i--){
+            if(parity==1) v[i]=-v[i];
+            if(v[i]>0){
+                ans.push_back(i);
+                parity^=1;
+            }
+        }
+        int32_t space=ans.size();
+        cout<<space<<"\n";
+        for(int32_t i{0};i<space;i++) cout<<ans[i]+1<<" ";
+        cout<<"\n";
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;

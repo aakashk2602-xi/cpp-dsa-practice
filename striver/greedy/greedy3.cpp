@@ -8,16 +8,25 @@ typedef long long ll;
 #define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
 
 //  Valid Parenthesis String
-
-
-
-int32_t main(){
-    ll _{1};
+/*int32_t main(){
+    ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
-        vector<ll> v(n,0);
-        for(ll i{0};i<n;i++) cin>> v[i];
+        string s(n,'0');cin>>s;
+        ll minimum{0},maximum{0};
+        for(ll i{0};i<n;i++){
+            if(s[i]=='('){ ++minimum; ++maximum; }
+            else if(s[i]==')'){ --minimum; --maximum; }
+            else{ --minimum; ++maximum; }
+
+            if(minimum<0) minimum=0;
+            if(maximum<0) { cout<<"No\n"; continue; }
+        }
+        if(minimum==0) cout<<"Yes\n";
+        else cout<<"No\n";
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
-}
+}*/
+
+// Candy
