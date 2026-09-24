@@ -30,3 +30,28 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// C - AND, OR, Sort! - Took hint
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        string s;cin>>s;
+        if(is_sorted(all(s))) {cout<<"0\n";continue;}
+        ll ones{0},zeroes{0};
+        for(ll i{0};i<n;i++) if(s[i]=='0') ++zeroes;
+        
+        ll ans{INF};
+        if(s[0]=='1') cout<<zeroes<<"\n";
+        else{
+            for(ll i{0};i<n;i++){
+                ones+=(s[i]=='1');
+                zeroes-=(s[i]=='0');
+                ans=min(ans,ones+zeroes);
+            }
+            cout<<ans<<"\n";
+        }
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
