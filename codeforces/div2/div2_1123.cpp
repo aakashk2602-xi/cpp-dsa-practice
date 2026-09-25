@@ -30,3 +30,28 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// B - Fashionable Array -- Saw solution
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>v(n+1,0);
+        map<ll,ll> mpp;
+        for(ll i{1};i<=n;i++){ cin>>v[i]; mpp[v[i]]++; }
+
+        ll now=0;
+        while(now!=n){
+            for(int i=100;i>=1;i--){
+                if(mpp[i]){
+                    mpp[i]--;
+                    cout<<i<<' ';
+                    now++;
+                }
+            }
+        }
+        cout<<endl;
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
