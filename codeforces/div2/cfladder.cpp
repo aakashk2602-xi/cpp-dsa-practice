@@ -63,7 +63,7 @@ typedef long long ll;
 }*/
 
 // Codeforces div2 377 A - Buy a Shovel
-int32_t main(){
+/*int32_t main(){
     ll k{0},r{0};cin>>k>>r;
     ll ans{LLONG_MAX};
     for(ll i{1};i<=9;i++) if((k*i)%10==0 || (k*i)%10==r) {ans=min(ans,i); continue;}
@@ -72,4 +72,16 @@ int32_t main(){
     
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
-}
+}*/
+
+// Codeforces div2 189A - A Number Between Two Others
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll x{0},y{0};cin>>x>>y;
+        ll z{((y/x)-1)*x};
+        if(x<z && z<y && y%z!=0) cout<<"Yes\n";
+        else cout<<"No\n";
+    }
+    return 0;
+}*/
