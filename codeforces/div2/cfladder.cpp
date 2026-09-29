@@ -85,3 +85,18 @@ typedef long long ll;
     }
     return 0;
 }*/
+
+// Codeforces div2 189B
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        string s;cin>>s;
+        ll ans{0};
+        for(int32_t i{0};i<int32_t(s.size()-1);i++) ans+=(s[i]==s[i+1]);
+        if(ans<=2) cout<<"Yes\n";
+        else cout<<"No\n";
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
