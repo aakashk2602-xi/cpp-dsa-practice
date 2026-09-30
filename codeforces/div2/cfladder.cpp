@@ -100,3 +100,49 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces div2 2136B - Like the bitset
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0},k{0};cin>>n>>k;
+        string s;cin>>s;
+        vector<ll>ans(n,0);
+ 
+        // making of an answer
+        ll specifier{1};
+        ll count1{0};
+        for(ll i{0};i<n;i++){
+            if(s[i]=='1'){
+                ans[i]=specifier;
+                specifier++;
+                count1++;
+            }
+        }
+        for(ll i{0};i<n;i++){
+            if(s[i]=='0'){
+                ans[i]=specifier;
+                specifier++;
+            }
+        }
+ 
+        // checking of YES/NO?
+        ll maxcurr{0};
+        ll currcount{0};
+        for(ll i{0};i<n;i++){
+            if(s[i]=='1') ++currcount;
+            else currcount=0;
+
+            maxcurr=max(maxcurr,currcount);
+        }
+        if(maxcurr>=k && count1!=0) cout<<"No\n";
+        else{
+            cout<<"Yes\n";
+            for(ll i{0};i<n;i++) cout<<ans[i]<<" ";
+            cout<<"\n";
+        }
+ 
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
