@@ -146,3 +146,47 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Educational Codeforces div2 184 - Paras's Solution
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0},a{0};cin>>n>>a;
+        vector<int>v(n,0);
+        for(ll i{0};i<n;i++) cin>> v[i];
+        int cntl =0;
+        int cntr = 0;
+        for(int i=0;i<n;i++){
+            if(v[i] < a){
+                cntl++;
+            }
+            else if(v[i] > a ) {
+                cntr++;
+            }
+        }
+        if(cntl > cntr){
+            //toh phir a se chotta jo hnn wo le lo
+            int ans =0;
+            for(int i=0;i<n;i++){
+                if(v[i] < a){
+                    ans = max(ans , v[i]);
+                }
+            }
+            cout << ans << endl;
+        }
+        else {
+            // a se big jo hnn wo le lo
+            int ans =*max_element(v.begin() , v.end());
+            for(int i=0;i<n;i++){
+                if(v[i] > a){
+                    ans = min(ans , v[i]);
+                }
+            }
+            cout << ans << endl;
+        }
+        
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
