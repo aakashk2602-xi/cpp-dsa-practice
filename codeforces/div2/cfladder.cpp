@@ -190,3 +190,25 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces 1087 Div2 B
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>v(n,0);
+        for(ll i{0};i<n;i++) cin>> v[i];
+        vector<ll> ans(n,0);
+        for(ll i{0};i<n;i++){
+            ll des = 0,pez = 0;
+            for(ll j{i+1};j<n;j++){
+                if(v[i]>v[j]) des++;
+                if(v[j]>v[i]) pez++;
+            }
+            cout<<max(des,pez)<<" ";
+        }
+        cout<<"\n";
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
