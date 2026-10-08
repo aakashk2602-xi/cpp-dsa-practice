@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -212,3 +213,30 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+//
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>v(n+1,0);
+        for(ll i{1};i<=n;i++) cin>>v[i];
+
+        vector<ll> hash(n+1,-1);
+        ll count{0};
+        for(ll i{1};i<=n;i++){
+            cout<<i<<"--> i\n";
+            if(hash[i]==0){
+                break;
+            }
+            if(hash[i]==-1){
+                hash[v[i]]=0;
+                count++;
+            }
+        }
+        cout<<count<<"\n";
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}

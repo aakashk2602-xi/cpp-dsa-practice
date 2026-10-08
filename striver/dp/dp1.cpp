@@ -26,10 +26,11 @@ int32_t main(){
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
+        if(n==0) {cout<<0<<"\n"; continue;}
         ll prev2{0} , prev1{1};
         for(ll i{2};i<=n;i++){
             ll curri= prev1 + prev2;
@@ -38,6 +39,71 @@ int32_t main(){
         }
         cout<<prev1<<"\n";
     }
-}
+}*/
 
-// 
+// climbing stairs
+/*    int solve(int n , vector<int> & dp){
+        //base case 
+        if(n==0 || n==1) return 1;
+
+        //check if dp is not -1
+        if(dp[n]!=-1) return dp[n];
+
+        //store
+        return dp[n] = solve(n-1,dp) + solve(n-2,dp);
+*/
+
+// frog jump
+/*ll solve(ll ind , vector<ll>&dp, vector<ll>& a){
+    // base case
+    if(ind==0) return 0;
+
+    //check if dp[n] is not -1
+    if(dp[ind]!=-1) return dp[ind];
+
+    //recurrence relation
+    ll left{solve(ind-1,dp,a)+abs(a[ind]-a[ind-1])};
+    ll right{0};
+    if(ind>1) ll right = solve(ind-2,dp,a)+abs(a[ind]-a[ind-2]);
+
+    // store
+    return dp[ind]=min(left , right);
+}
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll> v(n,0);
+        for(ll i{0};i<n;i++) cin>> v[i];
+        vector<ll> dp(n+1,-1);
+        cout<<solve(n-1, dp, v)<<"\n";
+    }
+}*/
+/*int32_t main(){
+    ll n{0};cin>>n;
+    vector<ll> v(n,0);
+    for(ll i{0};i<n;i++) cin>> v[i];
+    ll prev1{a[1]-a[0]},prev2{0};
+    for(ll i{0};i<n;i++){
+        ll left = prev1 + abs(a[i]-a[i-1]);
+        ll right = prev2 + abs(a[i]-a[i-2]);
+
+        ll curr = min(left , right);
+
+        prev2 = prev1;
+        prev1 = curr;
+    }
+    cout << prev1 << "\n";
+}*/
+
+//frog jump with k distance
+int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll> v(n,0);
+        for(ll i{0};i<n;i++)cin>>v[i];
+
+        
+    }
+}
