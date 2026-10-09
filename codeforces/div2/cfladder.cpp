@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -214,29 +213,22 @@ typedef long long ll;
     return 0;
 }*/
 
-//
-int32_t main(){
+// Codeforces Round 1089 div2 B
+/*int32_t main(){
     ll _{0};cin>>_;
     while(_--){
         ll n{0};cin>>n;
         vector<ll>v(n+1,0);
         for(ll i{1};i<=n;i++) cin>>v[i];
 
-        vector<ll> hash(n+1,-1);
-        ll count{0};
+        ll ans{n};
         for(ll i{1};i<=n;i++){
-            cout<<i<<"--> i\n";
-            if(hash[i]==0){
-                break;
-            }
-            if(hash[i]==-1){
-                hash[v[i]]=0;
-                count++;
-            }
+            if(i<v[i]) ans--;
         }
-        cout<<count<<"\n";
+
+        cout<<ans<<"\n";
         
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
-}
+}*/

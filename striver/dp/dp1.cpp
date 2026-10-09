@@ -97,13 +97,34 @@ int32_t main(){
 }*/
 
 //frog jump with k distance
+/*ll solve(ll ind,ll k, vector<ll>& a , vector<ll>& dp){
+    // base case
+    if(ind==0) return 0;
+
+    //check dp at ind
+    if(dp[ind]!=-1) return dp[ind];
+
+    //calculate min steps required for reaching index ind
+    ll minsteps{INT_MAX};
+    for(ll i{1};i<=k;i++){
+        if(ind-i>=0){
+            ll jump = solve(ind-i, k, a, dp)+abs(a[ind]-a[ind-i]);
+            minsteps=min(minsteps,jump);
+        }
+    }
+
+    //store
+    return dp[ind]=minsteps;
+}
 int32_t main(){
     ll _{0};cin>>_;
     while(_--){
-        ll n{0};cin>>n;
+        ll n{0},k{0};cin>>n>>k;
         vector<ll> v(n,0);
         for(ll i{0};i<n;i++)cin>>v[i];
 
-        
+        vector<ll> dp(n+1,-1);
+        cout<<solve(n-1, k,v, dp)<<"\n";
+
     }
-}
+}*/
