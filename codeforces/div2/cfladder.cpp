@@ -232,3 +232,28 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Educational Codeforces div2 191 B
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        if(n%2==0){
+            for(ll j{1};j<=n;j++) cout<< j << " ";
+            for(ll j{n};j>=1;j--) cout<< j << " ";
+            for(ll j{n};j>=1;j--) cout<< j << " ";
+            for(ll j{1};j<=n;j++) cout<< j << " ";
+        }else{
+            cout<<ceil(n/2.0)<<" ";
+            for(ll j{1};j<=n;j++) if(j!=ceil(n/2.0)) cout<< j << " ";
+            for(ll j{n};j>=1;j--) cout<< j << " ";
+            for(ll j{n};j>=1;j--) cout<< j << " ";
+            cout<<ceil(n/2.0)<<" ";
+            for(ll j{1};j<=n;j++) if(j!=ceil(n/2.0)) cout<< j << " ";
+        }
+        cout<<"\n";
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
