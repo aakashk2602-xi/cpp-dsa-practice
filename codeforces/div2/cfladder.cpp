@@ -257,3 +257,27 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces Round div2 1095 B
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>v(n+1,0);
+        for(ll i{1};i<=n;i++) cin>> v[i];
+        
+        ll ans{0};
+        // since all numbers in the subarray will be multiple of gcd 
+        // M(gcd) - m(gcd) = gcd
+        // hence, M-m = 1 this proves only subarrays with 2 size are valid
+        // orelse M-m>1 which is not equal to 1
+        for(ll i{1};i<n;i++){
+            ll gd=gcd(v[i],v[i+1]);
+            if((max(v[i],v[i+1]) - min(v[i],v[i+1]) )/gd == 1 ) ans++;
+        }
+
+        cout<<ans<<"\n";
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
