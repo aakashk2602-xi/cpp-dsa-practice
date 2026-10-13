@@ -281,3 +281,21 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces Round div2 1064 A
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        string s;cin>>s;
+        ll check{s[n-1]};
+        ll count{0};
+        for(auto i:s){
+            if(check!=i) count++;
+        }
+
+        cout<<count<<"\n";
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
