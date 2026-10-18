@@ -87,3 +87,42 @@ typedef long long ll;
     }
     return 0;
 }*/
+
+// C - 101
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>v(n,0);
+
+        // aage se
+        ll count0{0},count1{0};
+        for(ll i{0};i<n;i++){
+            cin>>v[i];
+            if(v[i]==0) ++count0;
+            else if(v[i]==1) ++count1;
+
+            if(v[i]==-1 and (i==n-1 or count1==0)) {v[i]=1; count1++;}
+        }
+
+
+        //piche se
+        ll rev_count1{0};
+        for(ll i{n-1};i>=0;i--){
+            if(v[i]==1) ++rev_count1;
+            if(v[i]==-1 and rev_count1==0) v[i]=1;
+        }
+
+        
+        // rest all -1 to 0
+        for(ll i{0};i<n;i++) if(v[i]==-1) v[i]=0;
+
+        // final output
+        for(ll i{0};i<n;i++) cout<<v[i]<<" ";
+        cout<<"\n";
+
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
