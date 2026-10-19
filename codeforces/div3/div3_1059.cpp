@@ -17,9 +17,23 @@ typedef long long ll;
 }*/
 
 // B - 
-int32_t main(){
+/*int32_t main(){
     ll _{0};cin>>_;
     while (_--) {
-        
+        ll n{0};cin>>n;
+        string s;cin>>s;
+
+
+        ll count0{0};
+        for(ll i{0};i<n;i++) if(s[i]=='0') ++count0;
+        cout<<count0<<"\n";
+
+
+        for(ll i{0};i<n;i++){
+            if(s[i]=='0'){
+                cout<<i+1<<" ";
+            }
+        }
+        cout<<"\n";
     }
-}
+}*/
