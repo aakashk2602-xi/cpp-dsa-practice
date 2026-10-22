@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+#define INF 1000000000000000000LL
 #define all(x) x.begin(), x.end()
 #define rall(v) v.rbegin(), v.rend()
 #define sort(x) sort(all(x))
@@ -308,6 +309,35 @@ typedef long long ll;
 
         if(ll(n*b)<=a || b==a) cout<<1<<"\n";
         else cout<<2<<"\n";
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
+
+// Codeforces Div2 1127 B -- Mehul's Hint
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        vector<ll>a(n+1,0);
+        for(ll i{1};i<=n;i++) cin>>a[i];
+
+        ll minsum{a[1]},maxsum{a[1]};
+        ll ans{a[1]};
+        for(ll i{2};i<=n;i++){
+
+            //getting max value for current a[i]
+            ll maxValue=max({a[i],a[i]+maxsum,a[i]-minsum});
+            ans=max(maxValue,ans);
+
+            // modifying minsum and maxsum
+            minsum=min({minsum+a[i],minsum+a[i]-minsum,minsum+a[i]+minsum});
+            maxsum=max({maxsum+a[i],maxsum+a[i]-maxsum,maxsum+a[i]+maxsum});
+
+        }
+
+        cout<<ans<<"\n";
+        
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
