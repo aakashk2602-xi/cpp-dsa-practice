@@ -342,3 +342,64 @@ typedef long long ll;
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
 }*/
+
+// Codeforces Div3 1043 A
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        ll n{0};cin>>n;
+        string a;cin>>a;
+        ll m{0};cin>>m;
+        string b;cin>>b;
+        string some;cin>>some;
+
+        vector<char> V,D;
+        for(ll i{0};i<m;i++){
+            if(some[i]=='V') V.push_back(b[i]);
+            else D.push_back(b[i]);
+        }
+        reverse(V.begin(),V.end());
+        for(auto i:V) cout<<i;
+        for(auto i:a) cout<<i;
+        for(auto i:D) cout<<i;
+        cout<<"\n";
+
+        
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
+
+// Codeforces Div3 1043 B
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        // input-->
+        ll n{0};cin>>n;
+        int32_t upper = (to_string(n)).size();
+        ll z{1};
+        vector<ll> ans;
+        ll count{0};
+        while(z<=upper){
+            ll condition = n % ll( 1LL + ll(pow(ll(10),z)));
+            if(condition==0){
+                ll x = n / ll( 1LL + ll(pow(ll(10),z)));
+                ans.push_back(x);
+                count++;
+            }
+            z++;
+        }
+
+        // output-->
+        cout<<count<<"\n";
+        sort(ans);
+        if(count!=0){
+            for(auto i:ans) cout<<i<<" ";
+            cout<<"\n";
+        }
+        
+
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
