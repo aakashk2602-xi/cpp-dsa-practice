@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -6,6 +7,15 @@ typedef long long ll;
 #define rall(v) v.rbegin(), v.rend()
 #define sort(x) sort(all(x))
 #define rsort(x) sort(all(x), [](int a, int b) { return a > b; })
+// custom power function to avoid floating point precision
+ll my_pow(ll base,ll exp){
+    ll res=1;
+    for(ll i{0};i<exp;i++) res*=base;
+    return res;
+}
+
+
+//---------------------------------------------------------------------------------------------------------->
 
 // div2 763 A
 /*int32_t main(){
@@ -399,6 +409,38 @@ typedef long long ll;
         }
         
 
+    }
+    cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
+    return 0;
+}*/
+
+// Codeforces Div3 1043 C1
+/*int32_t main(){
+    ll _{0};cin>>_;
+    while(_--){
+        // input-->
+        ll n{0};cin>>n;
+
+        //powerof 3 stored
+        // 3^19 ~ 10^9
+        vector<ll> holder(20,-1);
+        for(ll i{0};i<20;i++) holder[i] = my_pow(3,i);
+
+
+        //logic part
+        ll ans{0};
+        while(n>0){
+            auto it = upper_bound(holder.begin(), holder.end(), n);
+            it--;
+            ll x = it - holder.begin();
+            if(x>0 and n>=3) ans += holder[x-1] * (9+x) ;
+            else{ ans+=n*3; break;}
+            n -= holder[x];
+            
+        }
+
+        //output-->
+        cout<<ans<<"\n";
     }
     cerr << "Time : " << 1000 * ((double)clock()) / (double)CLOCKS_PER_SEC << "ms\n";
     return 0;
